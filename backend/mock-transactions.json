@@ -1,0 +1,35 @@
+
+{
+  "account": {
+    "bankName": "Flowly Demo Bank",
+    "accountType": "Business",
+    "last4": "1234",
+    "balance": 24850
+  },
+  "transactions": [
+    {
+      "id": "TXN001",
+      "date": "2026-10-25",
+      "description": "Customer payment",
+      "amount": 35000,
+      "type": "credit",
+      "category": "Sales"
+    },
+    {
+      "id": "TXN002",
+      "date": "2026-10-24",
+      "description": "Office rent",
+      "amount": 9000,
+      "type": "debit",
+      "category": "Rent"
+    },
+    {
+      "id": "TXN003",
+      "date": "2026-10-23",
+      "description": "Grocery supplies",
+      "amount": 1250,
+      "type": "debit",
+      "category": "Supplies"
+    }
+  ]
+}

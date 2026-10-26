@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102e2a"><title>Flowly — Business money, made clear</title>
+<style>
+:root{--navy:#102e2a;--green:#1f8067;--lime:#d6f36a;--bg:#f4f8f5;--card:#fff;--line:#e1eae4;--muted:#73847d;--ink:#17332e;--blue:#4787ee;--red:#c95e4b;--amber:#b7792c;--shadow:0 12px 34px #14392e0d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}.app{min-height:100vh;display:grid;grid-template-columns:238px 1fr}.sidebar{background:var(--navy);color:white;padding:22px 14px;display:flex;flex-direction:column;gap:22px}.brand{display:flex;align-items:center;gap:10px;padding:0 9px;font-size:22px;font-weight:850;letter-spacing:-1px}.brandmark{background:var(--lime);color:var(--navy);width:36px;height:36px;border-radius:12px;display:grid;place-items:center}.brand small{display:block;font-size:9px;color:#a9c1b8;letter-spacing:1.8px;font-weight:600}.nav-label{color:#7e9c91;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;padding:0 12px;margin-bottom:5px}.nav{display:grid;gap:5px}.nav button{background:transparent;color:#c4d7d0;text-align:left;border-radius:12px;padding:11px 12px;display:flex;gap:11px;align-items:center;font-size:13px}.nav button:hover,.nav button.active{background:#244b40;color:white}.ico{width:21px;text-align:center;font-size:16px}.side-note{margin-top:auto;background:#1b4137;border:1px solid #31584c;padding:14px;border-radius:15px;color:#bfd5cd;font-size:11px}.side-note b{display:block;color:white;margin-bottom:5px}.main{padding:24px clamp(14px,3vw,40px) 42px;min-width:0}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}.topbar-left{display:flex;align-items:center;gap:12px}.hamb{display:none;background:white;border:1px solid var(--line);padding:9px 11px;border-radius:10px}.eyebrow{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:750}.title{font-size:clamp(24px,3vw,33px);letter-spacing:-1px;margin:4px 0 0}.top-actions{display:flex;align-items:center;gap:8px}.icon-btn,.profile-btn{background:white;border:1px solid var(--line);border-radius:12px;padding:9px 11px;color:var(--ink)}.profile-btn{display:flex;gap:8px;align-items:center}.avatar{width:28px;height:28px;background:#e8f2bb;border-radius:50%;display:grid;place-items:center;font-weight:800}.page{display:none}.page.active{display:block}.welcome{background:var(--navy);color:white;border-radius:22px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:17px;overflow:hidden}.welcome h2{margin:0 0 7px;font-size:clamp(21px,2.5vw,29px);letter-spacing:-.7px}.welcome p{margin:0;color:#b8cec5;font-size:12px;max-width:560px}.btn{padding:11px 14px;border-radius:10px;font-size:12px;font-weight:750}.primary{background:var(--lime);color:var(--navy)}.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.darkbtn{background:#244b40;color:white;border:1px solid #41675b}.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:17px}.metric,.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);min-width:0}.metric{padding:15px}.metric-top{display:flex;justify-content:space-between;gap:6px;font-size:10px;color:var(--muted);font-weight:700}.metric-icon{width:29px;height:29px;border-radius:10px;background:#eff7f1;display:grid;place-items:center;font-size:15px}.metric-value{font-size:clamp(19px,2vw,26px);font-weight:850;letter-spacing:-.8px;margin:14px 0 5px;overflow-wrap:anywhere}.metric-foot{font-size:10px;color:var(--muted)}.green{color:var(--green)}.red{color:var(--red)}.blue{color:var(--blue)}.grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.85fr);gap:15px;margin-bottom:15px}.panel{padding:19px}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:15px}.panel h3{font-size:15px;margin:0 0 4px}.sub{font-size:11px;color:var(--muted);line-height:1.5}.select,.input{border:1px solid var(--line);border-radius:9px;background:white;padding:9px 10px;font-size:12px;color:var(--ink);max-width:100%}.chart{height:225px;width:100%;display:block}.legend{display:flex;gap:14px;font-size:10px;color:var(--muted);margin-bottom:8px}.dot{width:8px;height:8px;display:inline-block;border-radius:3px;margin-right:5px}.quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.quick{padding:13px;text-align:left;border:1px solid var(--line);border-radius:13px;background:#fbfdfb;color:var(--ink)}.quick b{display:block;font-size:12px;margin:5px 0}.quick span{font-size:10px;color:var(--muted)}.list{display:grid;gap:9px}.list-item{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #edf2ee;font-size:12px}.list-item:last-child{border:0}.pill{font-size:9px;font-weight:800;padding:5px 8px;border-radius:20px;background:#eaf7ee;color:var(--green);white-space:nowrap}.pill.pending{background:#fff2df;color:var(--amber)}.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:13px}.toolbar .input{min-width:150px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font-size:10px;letter-spacing:.7px;text-transform:uppercase;color:#899990;padding:12px 9px;border-bottom:1px solid var(--line)}td{font-size:11px;padding:13px 9px;border-bottom:1px solid #edf2ee}tr:last-child td{border:0}.table-empty{text-align:center;color:var(--muted);padding:24px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:grid;gap:6px;min-width:0}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:750}.field input,.field select,.field textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:10px;padding:11px;background:#fbfdfb;color:var(--ink)}.field textarea{min-height:76px;resize:vertical}.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.notice{background:#f0f8f1;border-radius:12px;padding:12px;color:#45685d;font-size:11px;margin-top:13px}.notice.warn{background:#fff4e3;color:#8d6226}.empty{padding:20px;text-align:center;color:var(--muted);font-size:12px}.filterbar{display:flex;gap:8px;flex-wrap:wrap}.chat-fab{position:fixed;right:23px;bottom:23px;width:58px;height:58px;border-radius:50%;background:var(--lime);color:var(--navy);font-size:23px;font-weight:900;box-shadow:0 10px 30px #102e2a30;z-index:12}.chatbox{position:fixed;right:22px;bottom:91px;width:min(370px,calc(100vw - 28px));height:min(500px,70vh);background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 60px #102e2a2a;z-index:12;display:flex;flex-direction:column;overflow:hidden}.chat-head{background:var(--navy);color:white;padding:15px;display:flex;justify-content:space-between}.chat-messages{padding:13px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:9px}.bubble{max-width:90%;padding:10px 12px;border-radius:12px;background:#eff7f1;font-size:11px;white-space:pre-wrap}.bubble.user{align-self:flex-end;background:#e8f2bb}.chat-form{display:flex;padding:10px;gap:7px;border-top:1px solid var(--line)}.chat-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px}.auth-wrap{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--bg)}.auth-brand{background:var(--navy);color:white;padding:clamp(25px,6vw,70px);display:flex;flex-direction:column;justify-content:center}.auth-brand h1{font-size:clamp(35px,5vw,58px);line-height:1.02;letter-spacing:-2px;margin:28px 0 15px}.auth-brand p{color:#b8cec5;max-width:430px}.auth-card-wrap{padding:28px;display:grid;place-items:center}.auth-card{background:white;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:22px;padding:clamp(20px,4vw,35px);width:min(570px,100%);max-height:92vh;overflow:auto}.auth-card h2{margin:0 0 6px;font-size:25px}.auth-card .sub{margin-bottom:19px}.auth-tabs{display:flex;gap:7px;background:#f1f6f2;padding:5px;border-radius:11px;margin-bottom:18px}.auth-tabs button{flex:1;padding:10px;border-radius:8px;background:transparent;color:var(--muted);font-weight:750}.auth-tabs button.active{background:white;color:var(--ink);box-shadow:0 2px 8px #102e2a10}.section-label{grid-column:1/-1;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green);font-weight:850;padding-top:6px;border-bottom:1px solid var(--line);padding-bottom:6px}.auth-footer{font-size:10px;color:var(--muted);margin-top:14px}.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:50;background:var(--navy);color:white;padding:12px 16px;border-radius:12px;font-size:12px;transition:.2s;max-width:90vw}.toast.show{opacity:1;transform:translate(-50%,0)}.mobile-nav{display:none}
+@media(max-width:1120px){.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.grid{grid-template-columns:1fr}.auth-wrap{grid-template-columns:.8fr 1.2fr}}@media(max-width:720px){.app{display:block;padding-bottom:76px}.sidebar{display:none;position:fixed;z-index:30;inset:0 auto 0 0;width:260px;box-shadow:0 0 0 999px #0a201a66}.sidebar.open{display:flex}.main{padding:16px 12px 26px}.topbar{margin-bottom:16px}.hamb{display:block}.topbar .eyebrow{font-size:9px}.title{font-size:24px}.profile-btn{padding:5px 7px;font-size:10px}.profile-text{display:none}.icon-btn{padding:8px}.welcome{padding:20px;display:block}.welcome .btn{margin-top:14px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{padding:13px}.metric-value{font-size:21px}.metric:last-child{grid-column:1/-1}.panel{padding:15px;border-radius:15px}.chart{height:200px}.card-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.auth-wrap{display:block}.auth-brand{padding:22px;min-height:auto}.auth-brand h1{font-size:34px;margin:14px 0 8px}.auth-brand p{font-size:12px;margin:0}.auth-brand .brand{padding:0}.auth-card-wrap{padding:14px}.auth-card{max-height:none;padding:20px}.mobile-nav{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:white;border-top:1px solid var(--line);padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:10}.mobile-nav button{background:transparent;color:var(--muted);font-size:9px;display:grid;justify-items:center;gap:3px;min-width:50px}.mobile-nav button span{font-size:18px}.chat-fab{right:14px;bottom:85px;width:52px;height:52px}.chatbox{right:10px;bottom:145px}.toolbar .input{flex:1}.hide-mobile{display:none}}@media(min-width:721px){.mobile-nav{display:none}}
+/* Assistance-only styles: clear, column-based payment planning */
+.assist-intro{margin-bottom:15px}.assist-how{padding:13px 15px;border:1px solid #d9e9df;background:#f0f8f2;border-radius:12px;color:#34584b;font-size:12px}.assist-how b{color:var(--navy)}.assist-results{display:grid;gap:14px}.assist-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.assist-summary-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;min-width:0}.assist-summary-card span{display:block;color:var(--muted);font-size:11px;margin-bottom:8px}.assist-summary-card b{font-size:20px;overflow-wrap:anywhere}.assist-alert{border-radius:12px;padding:14px 16px;display:grid;gap:4px;font-size:12px}.assist-alert span{line-height:1.5}.assist-alert.success{background:#eaf7ef;border:1px solid #cce8d5;color:#245c3b}.assist-alert.warning{background:#fff6e6;border:1px solid #f0d9a8;color:#805515}.assist-alert.danger{background:#fff0ed;border:1px solid #efc5bd;color:#8b3023}.assist-timeline-panel{min-width:0}.assist-timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}.assist-step{background:#fbfdfb;border:1px solid var(--line);border-top:4px solid var(--green);border-radius:13px;padding:14px;min-width:0}.assist-step.outgoing{border-top-color:var(--red)}.assist-step.incoming{border-top-color:var(--green)}.assist-step-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.assist-step-number{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;background:#eaf1ed;color:var(--navy);font-size:11px;font-weight:850}.assist-kind{font-size:9px;font-weight:850;letter-spacing:.5px}.assist-kind.in{color:var(--green)}.assist-kind.out{color:var(--red)}.assist-overdue{background:#fff0ed;color:#a33829;border-radius:20px;padding:3px 7px;font-size:9px;font-weight:800}.assist-step h4{font-size:16px;margin:14px 0 2px;overflow-wrap:anywhere}.assist-date{font-size:11px;color:var(--muted)}.assist-amount{font-size:24px;font-weight:850;margin:13px 0}.assist-balance-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.assist-balance-grid>div{padding:9px;background:#f0f5f1;border-radius:9px;min-width:0}.assist-balance-grid span{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}.assist-balance-grid b{font-size:14px;overflow-wrap:anywhere}.assist-step-note{font-size:10px;color:var(--muted);line-height:1.5;margin:10px 0 0}.assist-suggestions ul{padding-left:20px;margin:12px 0}.assist-suggestions li{margin:9px 0;line-height:1.55}.assist-suggestions>.sub{font-size:10px;border-top:1px solid var(--line);padding-top:10px}.assist-empty-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}.assist-empty-grid>div{padding:13px;background:#f6f9f6;border:1px solid var(--line);border-radius:11px}.assist-empty-grid p{font-size:11px;color:var(--muted);margin:7px 0 0;line-height:1.5}.amber{color:var(--amber)!important}
+@media(max-width:720px){.assist-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.assist-summary-card{padding:12px}.assist-summary-card b{font-size:17px}.assist-timeline{grid-template-columns:1fr}.assist-empty-grid{grid-template-columns:1fr}}
+
+
+.language-setting{padding:12px 10px 13px;border:1px solid #31584c;background:#1b4137;border-radius:12px;display:grid;gap:7px}
+.language-setting label{font-size:12px;font-weight:800;color:#fff}
+.language-setting select{width:100%;min-width:0;background:#fff;color:#17332e;border:1px solid #d4e1d9;border-radius:8px;padding:9px 8px;font-size:12px}
+.language-hint{font-size:10px;line-height:1.4;color:#bfd5cd}
+.goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.goog-te-spinner-pos{display:none!important}
+body{top:0!important}
+.goog-logo-link,.goog-te-gadget span{display:none!important}
+.goog-te-gadget{font-size:0!important}
+
+.voice-field{display:flex;align-items:stretch;gap:7px;width:100%}.voice-field input{flex:1;min-width:0}.voice-btn{flex:0 0 auto;min-width:42px;border:1px solid var(--line);border-radius:10px;background:#eff7f1;color:var(--navy);font-size:18px;display:inline-flex;align-items:center;justify-content:center;padding:8px 11px}.voice-btn:hover{background:#e1f0e5}.voice-btn.listening{background:#ffe9e5;border-color:#e6a39a;color:#b42318;animation:voicePulse 1.2s infinite}.voice-btn:focus-visible{outline:2px solid var(--green);outline-offset:2px}.voice-status{font-size:10px;color:var(--muted);margin-top:4px;min-height:14px}@keyframes voicePulse{50%{box-shadow:0 0 0 5px #c95e4b22}}.chat-form .voice-btn{padding:6px 10px}.language-setting{position:relative}.language-setting select{display:block;width:100%;max-width:100%;min-height:38px;color:#17332e!important;-webkit-text-fill-color:#17332e;background:#fff!important;opacity:1;visibility:visible;border:1px solid #d4e1d9;border-radius:8px;padding:9px 8px;font-size:12px;appearance:auto}.language-setting select option{color:#17332e;background:#fff}.language-setting label{color:#fff!important;opacity:1;visibility:visible}
+</style></head><body>
+<div id="authScreen" class="auth-wrap"><section class="auth-brand"><h1>Make confident<br>money moves.</h1><p>Track real-world cash, understand what is due next, and plan a safer way through cash shortages.</p><div class="notice" style="background:#1b4137;color:#cde0d7;max-width:430px;margin-top:25px"><b style="color:white">Built for everyday business</b><br>Manual cash entries • Invoices • Upcoming payments • Liquidity planning</div></section><section class="auth-card-wrap"><div class="auth-card"><div class="auth-tabs"><button id="signupTab" class="active" type="button">Create account</button><button id="signinTab" type="button">Sign in</button></div><div id="signupPanel"><h2>Create your Flowly profile</h2><div class="sub">Enter your details and the financial accounts you want Flowly to consider. Use sample details in this demo.</div><form id="signupForm"><div class="form-grid"><div class="section-label">Personal details</div><div class="field"><label>Full name *</label><input id="suName" required autocomplete="name" placeholder="Your name"></div><div class="field"><label>Phone number *</label><input id="suPhone" required type="tel" pattern="[0-9+() -]{7,18}" placeholder="Phone number"></div><div class="field full"><label>Email address *</label><input id="suEmail" required type="email" autocomplete="email" placeholder="you@example.com"></div><div class="field full"><label>Password *</label><input id="suPassword" required type="password" minlength="6" placeholder="At least 6 characters"></div><div class="section-label">Bank account details</div><div class="field"><label>Bank name</label><input id="suBank" placeholder="Bank or institution"></div><div class="field"><label>Account type</label><select id="suBankType"><option>Savings</option><option>Current</option><option>Business</option><option>Other</option></select></div><div class="field"><label>Current bank balance (₹, optional)</label><input id="suBankBalance" type="number" min="0" placeholder="Available balance"></div><div class="field"><label>Account last 4 digits (optional)</label><input id="suBankLast4" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="Only last 4 digits"></div><div class="section-label">Fixed deposits (FD)</div><div class="field full"><label>Do you have an FD account?</label><select id="suHasFD"><option value="no">No FD account</option><option value="yes">Yes, I have FD(s)</option></select></div><div id="fdFields" class="field full hidden"><label>FD details (institution, approximate amount, maturity date, early-withdrawal cost)</label><textarea id="suFDDetails" placeholder="Example: Bank A, ₹50,000, maturity 15/06/2027, estimated penalty 1%"></textarea></div><div class="section-label">Mutual funds</div><div class="field full"><label>Do you have mutual funds?</label><select id="suHasMF"><option value="no">No mutual fund account</option><option value="yes">Yes, I have mutual funds</option></select></div><div id="mfFields" class="field full hidden"><label>Mutual fund details (fund/platform, approximate value, exit load/lock-in)</label><textarea id="suMFDetails" placeholder="Example: Fund/platform, ₹80,000, exit load 0.5%, lock-in if any"></textarea></div></div><button class="btn primary" style="width:100%;margin-top:18px" type="submit">Create profile & open Flowly →</button></form><div class="auth-footer">Demo only: profile is saved in this browser. Do not enter real passwords, full bank account numbers, card details, or banking credentials.</div></div><div id="signinPanel" class="hidden"><h2>Welcome back</h2><div class="sub">Sign in to your saved local demo profile.</div><form id="signinForm" class="form-grid"><div class="field full"><label>Email address</label><input id="siEmail" required type="email" placeholder="you@example.com"></div><div class="field full"><label>Password</label><input id="siPassword" required type="password" placeholder="Your password"></div><div class="field full"><button class="btn primary" type="submit">Sign in →</button></div></form><div class="auth-footer">This prototype uses local browser storage, not secure production authentication.</div></div></div></section></div>
+<div id="app" class="app hidden"><aside id="sidebar" class="sidebar"><div><div class="nav-label">Workspace</div><nav id="sideNav" class="nav"><button data-page="search"><span class="ico">⌕</span>Search</button><button data-page="home" class="active"><span class="ico">⌂</span>Home</button><button data-page="cashflow"><span class="ico">▥</span>Cash flow</button><button data-page="invoice"><span class="ico">▤</span>Invoice</button><button data-page="upcoming"><span class="ico">◷</span>Upcoming payments</button><button data-page="assistance"><span class="ico">✦</span>Assistance</button><button data-page="transactions"><span class="ico">＋</span>Add transactions</button><button data-page="investment"><span class="ico">↗</span>Investment</button><div class="language-setting notranslate" translate="no">
+<label for="languageSelect" class="notranslate" translate="no">🌐 Language</label>
+<select id="languageSelect" aria-label="Choose website language">
+<option value="af">Afrikaans</option>
+<option value="sq">Albanian</option>
+<option value="am">Amharic</option>
+<option value="ar">Arabic</option>
+<option value="hy">Armenian</option>
+<option value="as">Assamese</option>
+<option value="ay">Aymara</option>
+<option value="az">Azerbaijani</option>
+<option value="bm">Bambara</option>
+<option value="eu">Basque</option>
+<option value="be">Belarusian</option>
+<option value="bn">Bengali</option>
+<option value="bho">Bhojpuri</option>
+<option value="bs">Bosnian</option>
+<option value="bg">Bulgarian</option>
+<option value="ca">Catalan</option>
+<option value="ceb">Cebuano</option>
+<option value="zh-CN">Chinese (Simplified)</option>
+<option value="zh-TW">Chinese (Traditional)</option>
+<option value="co">Corsican</option>
+<option value="hr">Croatian</option>
+<option value="cs">Czech</option>
+<option value="da">Danish</option>
+<option value="dv">Dhivehi</option>
+<option value="doi">Dogri</option>
+<option value="nl">Dutch</option>
+<option value="en">English</option>
+<option value="eo">Esperanto</option>
+<option value="et">Estonian</option>
+<option value="ee">Ewe</option>
+<option value="tl">Filipino</option>
+<option value="fi">Finnish</option>
+<option value="fr">French</option>
+<option value="fy">Frisian</option>
+<option value="gl">Galician</option>
+<option value="ka">Georgian</option>
+<option value="de">German</option>
+<option value="el">Greek</option>
+<option value="gn">Guarani</option>
+<option value="gu">Gujarati</option>
+<option value="ht">Haitian Creole</option>
+<option value="ha">Hausa</option>
+<option value="haw">Hawaiian</option>
+<option value="iw">Hebrew</option>
+<option value="hi">Hindi</option>
+<option value="hmn">Hmong</option>
+<option value="hu">Hungarian</option>
+<option value="is">Icelandic</option>
+<option value="ig">Igbo</option>
+<option value="ilo">Ilocano</option>
+<option value="id">Indonesian</option>
+<option value="ga">Irish</option>
+<option value="it">Italian</option>
+<option value="ja">Japanese</option>
+<option value="jv">Javanese</option>
+<option value="kn">Kannada</option>
+<option value="kk">Kazakh</option>
+<option value="km">Khmer</option>
+<option value="rw">Kinyarwanda</option>
+<option value="gom">Konkani</option>
+<option value="ko">Korean</option>
+<option value="kri">Krio</option>
+<option value="ku">Kurdish</option>
+<option value="ky">Kyrgyz</option>
+<option value="lo">Lao</option>
+<option value="la">Latin</option>
+<option value="lv">Latvian</option>
+<option value="ln">Lingala</option>
+<option value="lt">Lithuanian</option>
+<option value="lg">Luganda</option>
+<option value="lb">Luxembourgish</option>
+<option value="mk">Macedonian</option>
+<option value="mai">Maithili</option>
+<option value="mg">Malagasy</option>
+<option value="ms">Malay</option>
+<option value="ml">Malayalam</option>
+<option value="mt">Maltese</option>
+<option value="mi">Maori</option>
+<option value="mr">Marathi</option>
+<option value="mni-Mtei">Meiteilon (Manipuri)</option>
+<option value="lus">Mizo</option>
+<option value="mn">Mongolian</option>
+<option value="my">Myanmar (Burmese)</option>
+<option value="ne">Nepali</option>
+<option value="no">Norwegian</option>
+<option value="ny">Nyanja (Chichewa)</option>
+<option value="or">Odia (Oriya)</option>
+<option value="om">Oromo</option>
+<option value="ps">Pashto</option>
+<option value="fa">Persian</option>
+<option value="pl">Polish</option>
+<option value="pt">Portuguese</option>
+<option value="pa">Punjabi</option>
+<option value="qu">Quechua</option>
+<option value="ro">Romanian</option>
+<option value="ru">Russian</option>
+<option value="sm">Samoan</option>
+<option value="sa">Sanskrit</option>
+<option value="gd">Scots Gaelic</option>
+<option value="nso">Sepedi</option>
+<option value="sr">Serbian</option>
+<option value="st">Sesotho</option>
+<option value="sn">Shona</option>
+<option value="sd">Sindhi</option>
+<option value="si">Sinhala</option>
+<option value="sk">Slovak</option>
+<option value="sl">Slovenian</option>
+<option value="so">Somali</option>
+<option value="es">Spanish</option>
+<option value="su">Sundanese</option>
+<option value="sw">Swahili</option>
+<option value="sv">Swedish</option>
+<option value="tg">Tajik</option>
+<option value="ta">Tamil</option>
+<option value="tt">Tatar</option>
+<option value="te">Telugu</option>
+<option value="th">Thai</option>
+<option value="ti">Tigrinya</option>
+<option value="ts">Tsonga</option>
+<option value="tr">Turkish</option>
+<option value="tk">Turkmen</option>
+<option value="ak">Twi (Akan)</option>
+<option value="uk">Ukrainian</option>
+<option value="ur">Urdu</option>
+<option value="ug">Uyghur</option>
+<option value="uz">Uzbek</option>
+<option value="vi">Vietnamese</option>
+<option value="cy">Welsh</option>
+<option value="xh">Xhosa</option>
+<option value="yi">Yiddish</option>
+<option value="yo">Yoruba</option>
+<option value="zu">Zulu</option>
+</select>
+<div class="language-hint">Choose a language to translate the website.</div>
+</div><button id="signoutBtn"><span class="ico">⇥</span>Sign out & clear data</button></nav></div><div class="side-note"><b>Cash clarity, not guesswork.</b>Record cash consistently and check deadlines before committing to a payment.</div></aside><main class="main"><header class="topbar"><div class="topbar-left"><button class="hamb" id="hamb">☰</button><div><div class="eyebrow">Flowly workspace</div><h1 id="pageTitle" class="title">Home</h1></div></div><div class="top-actions"><button id="paymentTop" class="btn primary">＋ Payment</button><button id="notifyBtn" class="icon-btn" title="Notifications">♧<span id="notifyCount"></span></button><button id="profileBtn" class="profile-btn"><span class="avatar" id="avatar">U</span><span class="profile-text" id="profileName">Your profile</span>⌄</button></div></header>
+<section id="page-home" class="page active"><div class="welcome"><div><div class="eyebrow" style="color:#b6d0c6">YOUR BUSINESS AT A GLANCE</div><h2 id="welcomeName">Good day. Let's plan ahead.</h2><p>Track the money you actually receive and pay, stay ahead of deadlines, and compare funding options before a cash gap becomes urgent.</p></div><button class="btn primary" data-goto="transactions">＋ Record transaction</button></div><div class="metrics"><article class="metric"><div class="metric-top">Current account balance <span class="metric-icon">🏦</span></div><div id="metricBalance" class="metric-value">₹0</div><div class="metric-foot">Recorded bank + cash estimate</div></article><article class="metric"><div class="metric-top">Upcoming outflow this month <span class="metric-icon">↗</span></div><div id="metricOutflow" class="metric-value">₹0</div><div class="metric-foot">Scheduled payments due this month</div></article><article class="metric"><div class="metric-top">Upcoming inflow this month <span class="metric-icon">↙</span></div><div id="metricInflow" class="metric-value">₹0</div><div class="metric-foot">Expected customer receipts</div></article><article class="metric"><div class="metric-top">Profit this month <span class="metric-icon">✦</span></div><div id="metricProfit" class="metric-value green">₹0</div><div class="metric-foot">Recorded inflow minus outflow</div></article><article class="metric"><div class="metric-top">Loss this month <span class="metric-icon">⌁</span></div><div id="metricLoss" class="metric-value red">₹0</div><div class="metric-foot">Shown when recorded outflow is higher</div></article></div><div class="grid"><article class="panel"><div class="panel-head"><div><h3>Cash-flow snapshot</h3><div class="sub">Actual recorded money and a simple illustrative forecast.</div></div><button class="btn secondary" data-goto="cashflow">View cash flow</button></div><div class="legend"><span><i class="dot" style="background:var(--green)"></i>Actual net flow</span><span><i class="dot" style="background:var(--blue)"></i>Forecast estimate</span></div><svg id="homeChart" class="chart" viewBox="0 0 600 220" preserveAspectRatio="none"></svg><div class="notice">Forecasts are estimates based on the data entered in this demo, not guaranteed future income.</div></article><article class="panel"><div class="panel-head"><div><h3>Quick actions</h3><div class="sub">Get to the task you need.</div></div></div><div class="quick-actions"><button class="quick" data-goto="invoice">🧾<b>Generate invoice</b><span>Create a customer bill</span></button><button class="quick" data-goto="upcoming">🗓️<b>Upcoming payments</b><span>Review due dates</span></button><button class="quick" data-goto="assistance">✦<b>Ask Flowly AI</b><span>Prioritize cash needs</span></button><button class="quick" data-goto="investment">💼<b>Liquidity rescue</b><span>Compare withdrawals</span></button></div></article></div><div class="grid"><article class="panel"><div class="panel-head"><div><h3>Next deadlines</h3><div class="sub">Upcoming inflows and outflows.</div></div><button class="btn secondary" data-goto="upcoming">See all</button></div><div id="homeDeadlines" class="list"></div></article><article class="panel"><div class="panel-head"><div><h3>Latest invoices</h3><div class="sub">Recent customer bills and payment status.</div></div><button class="btn secondary" data-goto="invoice">Open invoices</button></div><div id="homeInvoices" class="list"></div></article></div></section>
+<section id="page-search" class="page"><article class="panel"><div class="panel-head"><div><h3>Search Flowly</h3><div class="sub">Search dashboard sections, settings, or actions.</div></div></div><div class="field"><label>What are you looking for?</label><div class="voice-field"><input id="globalSearch" class="input" placeholder="Try invoice, cash flow, investments, upcoming payments..."><button type="button" class="voice-btn" data-voice-target="globalSearch" title="Speak your search" aria-label="Speak your search">🎙️</button></div><div class="voice-status" id="voiceStatus-globalSearch" aria-live="polite"></div></div><div id="searchResults" class="quick-actions" style="margin-top:15px"></div></article></section>
+<section id="page-cashflow" class="page"><div class="panel"><div class="panel-head"><div><h3>Cash flow</h3><div class="sub">Compare actual recorded cash with the demo forecast. Add invoices and transactions to improve the view.</div></div><select id="cashRange" class="select"><option value="month">This month</option><option value="week">This week</option></select></div><div class="filterbar" style="margin-bottom:14px"><button class="btn primary" id="inflowTab">Inflow</button><button class="btn secondary" id="outflowTab">Outflow</button></div><div class="legend"><span><i class="dot" style="background:var(--blue)"></i>AI-style prediction (demo)</span><span><i class="dot" style="background:var(--green)"></i>Actual recorded</span></div><svg id="cashChart" class="chart" viewBox="0 0 900 300" preserveAspectRatio="none"></svg><div id="cashChartLabels" class="sub">X-axis: dates · Y-axis: amount (₹, up to ₹3,00,000; scale expands if needed)</div><div class="notice">Predicted bars are illustrative estimates, not a trained AI model. Real bars are based on entries in Flowly. For inflow, payment invoices count when marked successful; cash receipts count when recorded.</div></div></section>
+<section id="page-invoice" class="page"><div class="panel"><div class="panel-head"><div><h3>Invoices & transaction history</h3><div class="sub">Bills created from Payment and records of cash received or paid.</div></div><button class="btn primary" id="newInvoiceBtn">＋ Generate bill</button></div><div class="toolbar"><select id="invoiceFilter" class="select"><option value="all">All transactions</option><option value="date">Date-wise: today</option><option value="month">Month-wise: this month</option><option value="in">Only inflow</option><option value="out">Only outflow</option><option value="pending">Pending invoices</option></select><input id="invoiceSearch" class="input" placeholder="Search customer or purpose"></div><div class="table-wrap"><table><thead><tr><th>Transaction / customer</th><th>Amount</th><th>State</th><th>Date / due</th><th>Receipt</th></tr></thead><tbody id="invoiceRows"></tbody></table></div><div class="panel-head" style="margin:15px 0 0"><span class="sub" id="invoiceCount">0 records</span><button id="refreshInvoices" class="btn secondary">↻ Refresh</button></div></div></section>
+<section id="page-upcoming" class="page"><div class="panel"><div class="panel-head"><div><h3>Upcoming payments</h3><div class="sub">Track expected money in and planned money out with deadlines.</div></div><button class="btn secondary" id="addInflowDue">＋ Add expected inflow</button>
+<button class="btn primary" id="addOutflowDue">＋ Add outgoing due</button></div><div class="filterbar" style="margin-bottom:15px"><button type="button" class="btn primary" id="upInTab" onclick="window.setUpcomingType('in')">Inflow</button><button type="button" class="btn secondary" id="upOutTab" onclick="window.setUpcomingType('out')">Outflow</button></div><div class="table-wrap"><table><thead id="upcomingHead"></thead><tbody id="upcomingRows"></tbody></table></div><div class="notice">Notifications are shown in this website when you open it. Browser push notifications require permission and a hosted service; this offline prototype cannot guarantee alerts when it is closed.</div></div></section>
+<section id="page-assistance" class="page"><div class="panel assist-intro"><div class="panel-head"><div><h3>Flowly Assistance</h3><div class="sub">A clear, step-by-step payment plan based on your balance, bills, and expected customer payments.</div></div><span class="metric-icon">✦</span></div><div class="assist-how"><b>How to use this:</b> Enter your current available balance below. Add rent, EMI, and other bills in <b>Upcoming payments → Add outgoing due</b>. Add customer money as a <b>Pending</b> invoice. Then select “Build my payment plan”.</div><div class="form-grid" style="margin-top:15px"><div class="field"><label>Current available balance (₹)</label><input id="assistCash" type="number" min="0" value="7000" placeholder="e.g. 7000"></div><div class="field"><label>Keep aside as emergency reserve (₹)</label><input id="assistReserve" type="number" min="0" value="0" placeholder="e.g. 1000"><small class="sub">Optional — set to 0 if you do not want to reserve money.</small></div></div><div class="field" style="margin-top:12px"><label>What do you need help with? (optional)</label><div class="voice-field"><input id="assistQuestion" type="text" placeholder="e.g. Can I pay rent before my EMI is due?"><button type="button" class="voice-btn" data-voice-target="assistQuestion" title="Speak your question" aria-label="Speak your question">🎙️</button></div><div class="voice-status" id="voiceStatus-assistQuestion" aria-live="polite"></div></div><button class="btn primary" id="getAdvice" style="margin-top:14px">✦ Build my payment plan</button></div><div id="adviceResult" class="assist-results" style="margin-top:16px"><div class="panel"><h3>Your payment plan will appear here</h3><p class="sub">Once you add your due dates and expected customer receipts, Flowly will show each step in date order and calculate the balance after every payment.</p></div></div><div class="panel" style="margin-top:16px"><div class="panel-head"><div><h3>Business outlook</h3><div class="sub">Summary of recorded transactions this month.</div></div></div><div id="outlookText" class="notice">Add income and expense records to estimate whether recorded cash flow is positive or negative.</div><div class="list" id="outlookList" style="margin-top:12px"></div></div></section>
+<section id="page-transactions" class="page"><div class="grid"><article class="panel"><div class="panel-head"><div><h3>Add transaction</h3><div class="sub">Record physical cash, UPI, bank transfers, or other business money manually.</div></div></div><form id="transactionForm" class="form-grid"><div class="field"><label>Transaction type *</label><select id="txType"><option value="in">Cash / money received (inflow)</option><option value="out">Cash / money paid (outflow)</option></select></div><div class="field"><label>Amount (₹) *</label><input id="txAmount" required type="number" min="1" placeholder="e.g. 2500"></div><div class="field"><label>Name / payee *</label><input id="txName" required placeholder="Customer, supplier, worker..."></div><div class="field"><label>Category</label><select id="txCategory"><option>Sales / customer receipt</option><option>Supplier</option><option>Salary</option><option>Rent</option><option>EMI / loan</option><option>Transport</option><option>Utilities</option><option>Other</option></select></div><div class="field"><label>Payment mode</label><select id="txMode"><option>Physical cash</option><option>UPI</option><option>Bank transfer</option><option>Cheque</option><option>Other</option></select></div><div class="field"><label>Date</label><input id="txDate" type="date" required></div><div class="field full"><label>Notes (optional)</label><input id="txNotes" placeholder="What was this transaction for?"></div><div class="field full"><button class="btn primary">Save transaction</button></div></form><div class="notice">Physical cash entries update the cash-book estimate. Other payment modes are recorded separately and should not be mistaken for money physically in the cash box.</div></article><article class="panel"><div class="panel-head"><div><h3>Cash-book snapshot</h3><div class="sub">Count your actual cash to check the recorded balance.</div></div></div><div class="metric-value" id="cashOnHand">₹0</div><div class="sub">Recorded physical cash in hand</div><form id="reconcileForm" style="margin-top:16px"><div class="field"><label>Actual cash counted (₹)</label><input id="actualCash" required type="number" min="0" placeholder="Count the cash in your box"></div><button class="btn secondary" style="margin-top:10px">Compare cash balance</button></form><div id="reconcileResult" class="notice">Cash difference will appear here after counting.</div></article></div><article class="panel"><div class="panel-head"><div><h3>Recent manual entries</h3><div class="sub">All entries are stored locally in this browser.</div></div><button class="btn secondary" id="refreshTx">↻ Refresh</button></div><div class="table-wrap"><table><thead><tr><th>Name / purpose</th><th>Type</th><th>Mode</th><th>Date</th><th>Amount</th></tr></thead><tbody id="txRows"></tbody></table></div></article></section>
+<section id="page-investment" class="page"><div class="grid"><article class="panel"><div class="panel-head"><div><h3>Smart Liquidity Rescue</h3><div class="sub">Compare which eligible asset may release the needed cash with the lowest estimated cost by your deadline.</div></div></div><div class="form-grid"><div class="field"><label>Amount needed (₹)</label><input id="invNeed" type="number" min="1" value="20000"></div><div class="field"><label>Need money by</label><input id="invDeadline" type="date"></div><div class="field"><label>Protect operating reserve (₹)</label><input id="invReserve" type="number" min="0" value="5000"></div><div class="field"><label>Expected incoming money date (optional)</label><input id="invIncomingDate" type="date"></div><div class="field"><label>Expected incoming amount (₹)</label><input id="invIncomingAmount" type="number" min="0" value="0"></div></div><button class="btn primary" id="compareInvestments" style="margin-top:13px">✦ Compare funding options</button><div id="investmentResult" class="notice">Enter the amount and deadline to compare your entered investment estimates.</div></article><article class="panel"><div class="panel-head"><div><h3>Your asset estimates</h3><div class="sub">Use estimates from your actual statements. No account connection is made.</div></div></div><div id="assetInputs" class="list"></div><button id="saveAssets" class="btn secondary" style="margin-top:12px">Save asset estimates</button><div class="notice warn">This is decision support, not regulated financial advice. Actual tax, exit load, FD penalty, lock-in, market price, and settlement time may differ.</div></article></div></section>
+</main><nav class="mobile-nav"><button data-goto="home"><span>⌂</span>Home</button><button data-goto="cashflow"><span>▥</span>Cash flow</button><button data-goto="invoice"><span>▤</span>Invoice</button><button data-goto="upcoming"><span>◷</span>Due dates</button><button data-goto="assistance"><span>✦</span>Assist</button></nav></div>
+<button id="chatFab" class="chat-fab hidden" title="Ask Flowly">✦</button><div id="chatbox" class="chatbox hidden"><div class="chat-head"><div><b>Ask Flowly</b><div style="font-size:10px;color:#b8cec5">Business helper · demo</div></div><button id="chatClose" style="background:transparent;color:white;font-size:18px">×</button></div><div id="chatMessages" class="chat-messages"><div class="bubble">Hi! Ask about your Flowly app, cash balance, due dates, or how to prioritize a payment. I use the data saved in this demo.</div></div><form id="chatForm" class="chat-form"><input id="chatInput" placeholder="Ask a question…" required><button type="button" class="voice-btn" data-voice-target="chatInput" title="Speak to Flowly" aria-label="Speak to Flowly">🎙️</button><button class="btn primary">Send</button></form><div id="voiceStatus-chatInput" class="voice-status" aria-live="polite" style="padding:0 10px 7px"></div></div><div id="toast" class="toast"></div><div id="google_translate_element" style="position:fixed;left:-9999px;top:0" aria-hidden="true"></div>
+<div id="billBackdrop" class="hidden" style="position:fixed;inset:0;background:#0a201a77;z-index:40;display:none;align-items:center;justify-content:center;padding:14px"><div class="panel" style="width:min(540px,100%);max-height:94vh;overflow:auto"><div class="panel-head"><div><h3>Generate customer bill</h3><div class="sub">Create an invoice and record whether payment is successful or pending.</div></div><button id="billClose" class="btn secondary">×</button></div><form id="billForm" class="form-grid"><div class="field"><label>Customer name *</label><input id="billName" required></div><div class="field"><label>Customer phone *</label><input id="billPhone" type="tel" required></div><div class="field"><label>Amount (₹) *</label><input id="billAmount" type="number" min="1" required></div><div class="field"><label>Payment mode</label><select id="billMode"><option>Cash</option><option>UPI</option><option>Bank transfer</option><option>Card</option><option>Other</option></select></div><div class="field"><label>Payment status</label><select id="billStatus"><option value="Successful">Payment successful</option><option value="Pending">Pending</option></select></div><div class="field"><label>Invoice date</label><input id="billDate" type="date" required></div><div id="pendingDaysField" class="field full hidden"><label>Expected payment in how many days?</label><input id="billDays" type="number" min="1" value="7"></div><div class="field full"><label>Description / item</label><input id="billDesc" placeholder="Products or service"></div><div class="field full"><button class="btn primary">Create invoice</button></div></form></div></div>
+<script>
+const $=id=>document.getElementById(id), money=n=>'₹'+Math.round(Number(n)||0).toLocaleString('en-IN'), today=()=>new Date().toISOString().slice(0,10), offsetDate=n=>{let d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
+let profile=null,transactions=[],invoices=[],outgoings=[],assets=[],cashOnHand=0,flowType='in',upType='in',chatOpen=false,bankData=null;
+const pages={search:'Search',home:'Home',cashflow:'Cash flow',invoice:'Invoice',upcoming:'Upcoming payments',assistance:'Assistance',transactions:'Add transactions',investment:'Investment'};
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(window.toastT);window.toastT=setTimeout(()=>$('toast').classList.remove('show'),2700)}function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function dateFmt(s){if(!s)return '—';let d=new Date(s+'T12:00:00');return isNaN(d)?s:d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}function save(){localStorage.setItem('flowly_profile',JSON.stringify(profile));localStorage.setItem('flowly_transactions',JSON.stringify(transactions));localStorage.setItem('flowly_invoices',JSON.stringify(invoices));localStorage.setItem('flowly_outgoings',JSON.stringify(outgoings));localStorage.setItem('flowly_assets',JSON.stringify(assets));localStorage.setItem('flowly_cash',String(cashOnHand))}function load(){try{profile=JSON.parse(localStorage.getItem('flowly_profile')||'null');transactions=JSON.parse(localStorage.getItem('flowly_transactions')||'[]');invoices=JSON.parse(localStorage.getItem('flowly_invoices')||'[]');outgoings=JSON.parse(localStorage.getItem('flowly_outgoings')||'[]');assets=JSON.parse(localStorage.getItem('flowly_assets')||'[]');cashOnHand=Number(localStorage.getItem('flowly_cash')||0)}catch(e){profile=null;transactions=[];invoices=[];outgoings=[];assets=[];cashOnHand=0}if(!assets.length)assets=[{name:'Bank savings',kind:'Bank',value:25000,annual:3,exit:0,days:0},{name:'Fixed deposit',kind:'FD',value:50000,annual:7,exit:1,days:1},{name:'Mutual funds',kind:'Mutual fund',value:80000,annual:10,exit:.5,days:2}];}
+function switchAuth(mode){$('signupPanel').classList.toggle('hidden',mode!=='signup');$('signinPanel').classList.toggle('hidden',mode!=='signin');$('signupTab').classList.toggle('active',mode==='signup');$('signinTab').classList.toggle('active',mode==='signin')}$('signupTab').onclick=()=>switchAuth('signup');$('signinTab').onclick=()=>switchAuth('signin');$('suHasFD').onchange=()=>$('fdFields').classList.toggle('hidden',$('suHasFD').value!=='yes');$('suHasMF').onchange=()=>$('mfFields').classList.toggle('hidden',$('suHasMF').value!=='yes');
+$('signupForm').onsubmit=e=>{e.preventDefault();profile={name:$('suName').value.trim(),phone:$('suPhone').value.trim(),email:$('suEmail').value.trim().toLowerCase(),password:$('suPassword').value,bank:$('suBank').value.trim(),bankType:$('suBankType').value,bankLast4:$('suBankLast4').value,bankBalance:Number($('suBankBalance').value)||0,hasFD:$('suHasFD').value==='yes',fdDetails:$('suFDDetails').value,hasMF:$('suHasMF').value==='yes',mfDetails:$('suMFDetails').value};if(profile.bankLast4&&!/^\d{4}$/.test(profile.bankLast4)){toast('Enter only 4 digits for the optional account reference.');return}transactions=[];invoices=[];outgoings=[];cashOnHand=0;save();openApp();toast('Profile created in this browser.')};$('signinForm').onsubmit=e=>{e.preventDefault();let p;try{p=JSON.parse(localStorage.getItem('flowly_profile')||'null')}catch{}if(!p||p.email!==$('siEmail').value.trim().toLowerCase()||p.password!==$('siPassword').value){toast('No matching local demo profile. Create an account on this browser first.');return}profile=p;load();openApp()};
+async function testBankConnection() {
+  try {
+    const response = await fetch("/api/bank");
+    const data = await response.json();
+    bankData = data;
+    if (profile) {
+  renderHome();
+}
+    console.log("Flowly mock bank data:", data);
+    alert("Bank API connected successfully!");
+  } catch (error) {
+    console.error("Bank connection failed:", error);
+    alert("Could not connect to the bank API.");
+  }
+}
+async function loadBankData() {
+  try {
+    const response = await fetch("/api/bank");
+
+    if (!response.ok) {
+      throw new Error("Could not fetch bank data");
+    }
+
+    const data = await response.json();
+bankData = data;
+if (profile) {
+  renderHome();
+}
+    console.log("Bank account:", data.account);
+    console.log("Bank transactions:", data.transactions);
+
+    return data;
+  } catch (error) {
+    console.error("Failed to load bank data:", error);
+    return null;
+  }
+}
+function openApp(){ loadBankData(); $('authScreen').classList.add('hidden');$('app').classList.remove('hidden');$('chatFab').classList.remove('hidden');$('profileName').textContent=profile.name.split(' ')[0];$('avatar').textContent=profile.name.trim().charAt(0).toUpperCase()||'U';$('welcomeName').textContent='Welcome, '+profile.name.split(' ')[0]+'. Let’s plan ahead.';$('txDate').value=today();$('billDate').value=today();$('invDeadline').value=offsetDate(0);$('invIncomingDate').value=offsetDate(20);$('assistCash').value=Math.round(cashOnHand);renderAll();navigate('home')}
+function navigate(key){if(!pages[key])key='home';document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$('page-'+key).classList.add('active');$('pageTitle').textContent=pages[key];document.querySelectorAll('#sideNav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===key));$('sidebar').classList.remove('open');if(key==='cashflow')renderCashChart();if(key==='invoice')renderInvoices();if(key==='upcoming')renderUpcoming();if(key==='transactions')renderTxRows();if(key==='investment')renderAssets();if(key==='assistance')renderOutlook();window.scrollTo({top:0,behavior:'smooth'})}document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>navigate(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>navigate(b.dataset.goto));$('hamb').onclick=()=>$('sidebar').classList.toggle('open');$('profileBtn').onclick=()=>{navigate('search');$('globalSearch').value='profile settings';renderSearch()};$('signoutBtn').onclick=()=>{if(confirm('Sign out and permanently clear all Flowly demo data saved in this browser?')){['flowly_profile','flowly_transactions','flowly_invoices','flowly_outgoings','flowly_assets','flowly_cash'].forEach(k=>localStorage.removeItem(k));profile=null;transactions=[];invoices=[];outgoings=[];cashOnHand=0;$('app').classList.add('hidden');$('chatFab').classList.add('hidden');$('authScreen').classList.remove('hidden');$('signupForm').reset();switchAuth('signup');toast('Signed out and local demo data cleared.')}};
+function monthRows(){let m=today().slice(0,7);return transactions.filter(t=>t.date?.slice(0,7)===m)}function monthInv(){let m=today().slice(0,7);return invoices.filter(i=>i.date?.slice(0,7)===m)}function incomingExpected(){return invoices.filter(i=>i.status==='Pending'&&i.dueDate?.slice(0,7)===today().slice(0,7)).reduce((s,i)=>s+i.amount,0)}function total(type,arr=monthRows()){return arr.filter(t=>t.type===type).reduce((s,t)=>s+Number(t.amount),0)}function renderAll(){renderHome();renderInvoices();renderUpcoming();renderTxRows();renderAssets();renderOutlook();renderHomeChart();$('cashOnHand').textContent=money(cashOnHand);$('notifyCount').textContent=(getDueSoon().length?'•':'');$('assistCash').value=Math.max(0,cashOnHand);}
+function renderHome(){let ins=total('in'),outs=total('out'),profit=ins-outs;let account = Number(bankData?.account?.balance ?? profile?.bankBalance ?? 0) + cashOnHand; $('metricBalance').textContent=money(account);$('metricOutflow').textContent=money(outgoings.filter(o=>o.type==='out'&&o.date?.slice(0,7)===today().slice(0,7)).reduce((s,o)=>s+o.amount,0));$('metricInflow').textContent=money(incomingExpected());$('metricProfit').textContent=money(Math.max(0,profit));$('metricLoss').textContent=money(Math.max(0,-profit));let dl=[...invoices.filter(i=>i.status==='Pending').map(i=>({name:i.name,amount:i.amount,date:i.dueDate,type:'in',label:'Customer payment'})),...outgoings.map(o=>({...o,type:'out'}))].filter(x=>x.date).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,5);$('homeDeadlines').innerHTML=dl.length?dl.map(x=>`<div class="list-item"><div><b>${esc(x.name||x.purpose)}</b><div class="sub">${x.type==='in'?'Expected inflow':'Planned outflow'} · ${dateFmt(x.date)}</div></div><div style="text-align:right"><b class="${x.type==='in'?'green':'red'}">${money(x.amount)}</b></div></div>`).join(''):'<div class="empty">No upcoming deadlines yet. Generate a pending invoice or add an outgoing due.</div>';$('homeInvoices').innerHTML=invoices.length?invoices.slice(-4).reverse().map(i=>`<div class="list-item"><div><b>${esc(i.name)}</b><div class="sub">${i.id} · ${dateFmt(i.date)}</div></div><div style="text-align:right"><b>${money(i.amount)}</b><div><span class="pill ${i.status==='Pending'?'pending':''}">${i.status}</span></div></div></div>`).join(''):'<div class="empty">Your invoices will appear here.</div>'}
+function renderHomeChart(){let svg=$('homeChart'),days=7,actual=[],forecast=[];for(let i=0;i<days;i++){let d=new Date();d.setDate(d.getDate()-6+i);let ds=d.toISOString().slice(0,10);actual.push(transactions.filter(t=>t.date===ds).reduce((s,t)=>s+(t.type==='in'?1:-1)*t.amount,0));forecast.push(Math.max(-20000,actual[i]+(i+1)*1800));}let max=Math.max(10000,...actual.map(Math.abs),...forecast.map(Math.abs));let bars=actual.map((v,i)=>{let x=45+i*78,y=180-Math.abs(v)/max*130,h=Math.abs(v)/max*130;return `<rect x="${x}" y="${v>=0?y:180}" width="18" height="${Math.max(2,h)}" rx="3" fill="#1f8067" opacity=".9"/>`}).join('')+forecast.map((v,i)=>{let x=65+i*78,y=180-Math.abs(v)/max*130,h=Math.abs(v)/max*130;return `<rect x="${x}" y="${v>=0?y:180}" width="18" height="${Math.max(2,h)}" rx="3" fill="#4787ee" opacity=".75"/>`}).join('');svg.innerHTML=[45,90,135,180].map(y=>`<line x1="25" y1="${y}" x2="585" y2="${y}" stroke="#edf2ee"/>`).join('')+bars+Array.from({length:7},(_,i)=>`<text x="${50+i*78}" y="207" font-size="10" fill="#899990">${['−6d','−5d','−4d','−3d','−2d','−1d','Today'][i]}</text>`).join('')}
+function renderCashChart(){let range=$('cashRange').value,n=range==='week'?7:new Date(new Date().getFullYear(),new Date().getMonth()+1,0).getDate(),start=range==='week'?new Date(Date.now()-6*86400000):new Date(new Date().getFullYear(),new Date().getMonth(),1),svg=$('cashChart'),max=300000;let data=[];for(let i=0;i<n;i++){let d=new Date(start);d.setDate(d.getDate()+i);let ds=d.toISOString().slice(0,10),actual=transactions.filter(t=>t.date===ds&&t.type===flowType).reduce((s,t)=>s+t.amount,0);if(flowType==='in')actual+=invoices.filter(v=>v.date===ds&&v.status==='Successful'&&v.mode!=='Cash').reduce((s,v)=>s+v.amount,0);let forecast=actual?actual*1.12:Math.max(0,9000+Math.sin(i*1.7)*5000+(flowType==='out'?3000:0));data.push({actual,forecast,ds,day:d.getDate()})}max=Math.max(max,...data.flatMap(d=>[d.actual,d.forecast]));let step=range==='week'?1:5, ticks=range==='week'?Array.from({length:7},(_,i)=>i+1):[1,5,10,15,20,25,30,n];let width=900,left=42,right=12,plot=width-left-right,slot=plot/n,bars=data.map((d,i)=>{let x=left+i*slot+slot*.12,w=Math.max(2,slot*.31),ha=Math.max(0,d.actual/max*225),hp=Math.max(0,d.forecast/max*225);return `<rect x="${x}" y="${260-ha}" width="${w}" height="${ha}" rx="2" fill="#1f8067"><title>${d.ds} actual ${money(d.actual)}</title></rect><rect x="${x+w+2}" y="${260-hp}" width="${w}" height="${hp}" rx="2" fill="#4787ee"><title>${d.ds} predicted ${money(d.forecast)}</title></rect>`}).join('');let grid=[50,100,150,200,250].map(y=>`<line x1="${left}" y1="${y}" x2="${width-right}" y2="${y}" stroke="#edf2ee"/><text x="2" y="${y+3}" font-size="10" fill="#899990">₹${Math.round((260-y)/260*max/1000)}k</text>`).join('');let labels=ticks.map(t=>{let x=left+(Math.min(n,t)-.5)*slot;return `<text x="${x}" y="282" text-anchor="middle" font-size="10" fill="#899990">${t}</text>`}).join('');svg.innerHTML=grid+bars+labels;$('cashChartLabels').textContent=`X-axis: ${range==='week'?'day of week (1–7)':'day of month'} · Y-axis: amount in rupees (scale to ${money(max)} when needed).`}
+$('cashRange').onchange=renderCashChart;$('inflowTab').onclick=()=>{flowType='in';$('inflowTab').className='btn primary';$('outflowTab').className='btn secondary';renderCashChart()};$('outflowTab').onclick=()=>{flowType='out';$('outflowTab').className='btn primary';$('inflowTab').className='btn secondary';renderCashChart()};
+
+$('transactionForm').onsubmit=e=>{
+  e.preventDefault();
+  let t={
+    id:'TX-'+Date.now(),
+    type:$('txType').value,
+    amount:Number($('txAmount').value),
+    name:$('txName').value.trim(),
+    category:$('txCategory').value,
+    mode:$('txMode').value,
+    date:$('txDate').value||today(),
+    notes:$('txNotes').value.trim(),
+    status:'Successful'
+  };
+  transactions.push(t);
+  if(t.mode==='Physical cash')cashOnHand+=t.type==='in'?t.amount:-t.amount;
+  save();
+  e.target.reset();
+  $('txDate').value=today();
+  renderAll();
+  toast('Transaction saved.');
+  navigate('transactions');
+};
+
+function renderTxRows(){
+  let list=transactions.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,30);
+  $('txRows').innerHTML=list.length?list.map(t=>`<tr><td><b>${esc(t.name)}</b><div class="sub">${esc(t.category)} ${t.notes?'· '+esc(t.notes):''}</div></td><td>${t.type==='in'?'Inflow':'Outflow'}</td><td>${esc(t.mode)}</td><td>${dateFmt(t.date)}</td><td class="${t.type==='in'?'green':'red'}"><b>${t.type==='in'?'+':'−'}${money(t.amount)}</b></td></tr>`).join(''):'<tr><td colspan="5" class="table-empty">No manual transactions yet.</td></tr>';
+  $('cashOnHand').textContent=money(cashOnHand);
+}
+
+$('refreshTx').onclick=renderTxRows;
+$('reconcileForm').onsubmit=e=>{e.preventDefault();let actual=Number($('actualCash').value),diff=actual-cashOnHand;$('reconcileResult').className='notice '+(diff===0?'':'warn');$('reconcileResult').textContent=diff===0?'Great — actual cash matches the recorded cash balance.':`Difference: ${diff>0?'+':''}${money(diff)}. Review entries before changing the balance.`};
+function openBill(){ $('billBackdrop').classList.remove('hidden');$('billBackdrop').style.display='flex';$('billDate').value=today()}function closeBill(){$('billBackdrop').style.display='none';$('billBackdrop').classList.add('hidden')}$('paymentTop').onclick=openBill;$('newInvoiceBtn').onclick=openBill;$('billClose').onclick=closeBill;$('billStatus').onchange=()=>$('pendingDaysField').classList.toggle('hidden',$('billStatus').value!=='Pending');$('billForm').onsubmit=e=>{e.preventDefault();let date=$('billDate').value||today(),status=$('billStatus').value,days=status==='Pending'?Math.max(1,Number($('billDays').value)||1):0;let inv={id:'FL-'+String(Date.now()).slice(-8),name:$('billName').value.trim(),phone:$('billPhone').value.trim(),amount:Number($('billAmount').value),mode:$('billMode').value,status,date,dueDate:status==='Pending'?offsetDate(days):date,days,description:$('billDesc').value.trim(),type:'in'};invoices.push(inv);if(status==='Successful'&&inv.mode==='Cash'){transactions.push({id:'TX-'+Date.now(),type:'in',amount:inv.amount,name:inv.name,category:'Customer receipt',mode:'Physical cash',date:date,notes:'Invoice '+inv.id,status:'Successful'});cashOnHand+=inv.amount}save();e.target.reset();$('billDate').value=today();$('pendingDaysField').classList.add('hidden');closeBill();renderAll();toast('Invoice '+inv.id+' created.');navigate('invoice')};function renderInvoices(){let f=$('invoiceFilter').value,q=$('invoiceSearch').value.toLowerCase(),rows=[...invoices.map(i=>({...i,rowType:'invoice'})),...transactions.map(t=>({...t,rowType:'transaction',phone:'',dueDate:t.date}))];rows=rows.filter(r=>{if(f==='in'&&r.type!=='in')return false;if(f==='out'&&r.type!=='out')return false;if(f==='pending'&&r.status!=='Pending')return false;if(f==='date'&&r.date!==today())return false;if(f==='month'&&r.date?.slice(0,7)!==today().slice(0,7))return false;return (r.name+' '+(r.description||r.notes||'')+' '+r.id).toLowerCase().includes(q)}).sort((a,b)=>(b.date||'').localeCompare(a.date||''));$('invoiceRows').innerHTML=rows.length?rows.map(r=>`<tr><td><b>${esc(r.name)}</b><div class="sub">${esc(r.description||r.notes||r.category||r.id)} ${r.phone?'· '+esc(r.phone):''}</div></td><td class="${r.type==='out'?'red':'green'}"><b>${r.type==='out'?'−':'+'}${money(r.amount)}</b></td><td><span class="pill ${r.status==='Pending'?'pending':''}">${esc(r.status||'Recorded')}</span></td><td>${dateFmt(r.date)}${r.status==='Pending'?'<div class="sub">Due '+dateFmt(r.dueDate)+'</div>':''}</td><td>${r.rowType==='invoice'?`<button class="btn secondary" onclick="downloadReceipt('${r.id}')">↓ Receipt</button>`:'—'}</td></tr>`).join(''):'<tr><td colspan="5" class="table-empty">No matching transactions or invoices.</td></tr>';$('invoiceCount').textContent=rows.length+' record(s)'}$('invoiceFilter').onchange=renderInvoices;$('invoiceSearch').oninput=renderInvoices;$('refreshInvoices').onclick=()=>{renderInvoices();toast('Invoice list refreshed.')};window.downloadReceipt=id=>{let i=invoices.find(x=>x.id===id);if(!i)return;let text=`FLOWLY — PAYMENT RECEIPT\nInvoice: ${i.id}\nCustomer: ${i.name}\nPhone: ${i.phone}\nDescription: ${i.description||'Business transaction'}\nAmount: ${money(i.amount)}\nPayment mode: ${i.mode}\nStatus: ${i.status}\nInvoice date: ${dateFmt(i.date)}\nDue date: ${dateFmt(i.dueDate)}\n\nDemo receipt. Verify against actual payment records.`;let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'}));a.download=i.id+'-receipt.txt';a.click();URL.revokeObjectURL(a.href)};
+$('addOutflowDue').onclick=()=>{let purpose=prompt('Purpose (e.g. rent, EMI, worker salary):');if(!purpose)return;let amount=Number(prompt('Amount due in ₹:'));if(!amount||amount<1){toast('Enter a valid amount.');return}let date=prompt('Deadline (YYYY-MM-DD):',offsetDate(7));if(!date||!/^\d{4}-\d{2}-\d{2}$/.test(date)){toast('Enter a valid date.');return}outgoings.push({id:'DUE-'+Date.now(),name:purpose,purpose,amount,date,type:'out'});save();renderAll();renderUpcoming();toast('Outgoing due added.')};$('addInflowDue').onclick=()=>{
+  let name=prompt('Customer name:');
+  if(!name)return;
+
+  let amount=Number(prompt('Expected amount in ₹:'));
+  if(!amount||amount<1){
+    toast('Enter a valid amount.');
+    return;
+  }
+
+  let date=prompt('Expected payment date (YYYY-MM-DD):',offsetDate(7));
+  if(!date||!/^\d{4}-\d{2}-\d{2}$/.test(date)){
+    toast('Enter a valid date.');
+    return;
+  }
+
+  let inv={
+    id:'FL-'+String(Date.now()).slice(-8),
+    name:name.trim(),
+    phone:'',
+    amount,
+    mode:'Bank transfer',
+    status:'Pending',
+    date:today(),
+    dueDate:date,
+    days:0,
+    description:'Expected incoming payment',
+    type:'in'
+  };
+
+  invoices.push(inv);
+  save();
+  renderAll();
+  renderUpcoming();
+  toast('Expected inflow added.');
+};
+function compareInvestments() {
+  const result = $('investmentResult');
+
+  // Read and save the current asset input values.
+  document.querySelectorAll('[data-asset][data-key]').forEach(input => {
+    const asset = assets[Number(input.dataset.asset)];
+    if (asset) {
+      asset[input.dataset.key] = Math.max(0, Number(input.value) || 0);
+    }
+  });
+  save();
+
+  const need = Number($('invNeed').value);
+  const deadline = $('invDeadline').value;
+  const reserve = Math.max(0, Number($('invReserve').value) || 0);
+  const incomingDate = $('invIncomingDate').value;
+  const manualIncoming = Math.max(
+    0, Number($('invIncomingAmount').value) || 0
+  );
+
+  if (!Number.isFinite(need) || need <= 0) {
+    result.textContent = 'Enter an amount greater than ₹0.';
+    return;
+  }
+
+  if (!deadline) {
+    result.textContent = 'Please select a funding deadline.';
+    return;
+  }
+
+  const todayDate = new Date(today() + 'T00:00:00');
+  const deadlineDate = new Date(deadline + 'T00:00:00');
+  const daysLeft = Math.floor(
+    (deadlineDate - todayDate) / 86400000
+  );
+
+  if (daysLeft < 0) {
+    result.textContent =
+      'Your deadline has passed. Choose today or a future date to compare available options.';
+    return;
+  }
+
+  // Use existing Flowly records due by the selected deadline.
+  const expectedInvoices = invoices.filter(invoice =>
+    invoice.status === 'Pending' &&
+    invoice.dueDate &&
+    invoice.dueDate >= today() &&
+    invoice.dueDate <= deadline
+  );
+
+  const plannedBills = outgoings.filter(bill =>
+    bill.date &&
+    bill.date >= today() &&
+    bill.date <= deadline
+  );
+
+  const invoiceIncoming = expectedInvoices.reduce(
+    (sum, invoice) => sum + (Number(invoice.amount) || 0), 0
+  );
+
+  const billsDue = plannedBills.reduce(
+    (sum, bill) => sum + (Number(bill.amount) || 0), 0
+  );
+
+  const extraIncoming =
+    incomingDate &&
+    incomingDate >= today() &&
+    incomingDate <= deadline
+      ? manualIncoming
+      : 0;
+
+  // Include recorded physical cash, saved bank balance, and expected
+  // receipts, then subtract scheduled bills and the protected reserve.
+  const bankBalance = Math.max(
+    0, Number(profile && profile.bankBalance) || 0
+  );
+
+  const projectedFunds =
+    Math.max(0, cashOnHand) +
+    bankBalance +
+    invoiceIncoming +
+    extraIncoming -
+    billsDue -
+    reserve;
+
+  const gap = Math.max(0, need - Math.max(0, projectedFunds));
+
+  if (gap === 0) {
+    result.textContent =
+      'Your recorded cash, bank balance and expected receipts appear sufficient to cover the requested amount and listed bills while protecting your reserve. Verify the actual balances and receipt dates before spending.';
+    return;
+  }
+
+  // If the bank balance is known, use it rather than the demo default
+  // for the Bank savings asset. Other assets use saved estimates.
+  const options = assets.map(asset => {
+    const isBank = /bank|saving/i.test(asset.name || '');
+    const value = isBank && bankBalance > 0
+      ? bankBalance
+      : Math.max(0, Number(asset.value) || 0);
+
+    const exitRate = Math.max(0, Number(asset.exit) || 0) / 100;
+    const settlementDays = Math.max(0, Number(asset.days) || 0);
+    const annualReturn = Math.max(0, Number(asset.annual) || 0);
+
+    // Estimate maximum net proceeds after the entered exit cost.
+    const maxNet = value * (1 - exitRate);
+
+    // Estimate the gross withdrawal needed to cover the gap.
+    const grossNeeded = gap / Math.max(0.000001, 1 - exitRate);
+    const grossWithdrawal = Math.min(value, grossNeeded);
+    const exitCost = grossWithdrawal * exitRate;
+    const netProceeds = grossWithdrawal - exitCost;
+
+    return {
+      name: asset.name,
+      value,
+      exitRate,
+      settlementDays,
+      annualReturn,
+      maxNet,
+      grossWithdrawal,
+      exitCost,
+      netProceeds,
+      eligible: settlementDays <= daysLeft && maxNet > 0,
+      enough: maxNet >= gap
+    };
+  }).filter(asset => asset.value > 0 && asset.eligible);
+
+  // Prefer options that cover the gap, then lower exit cost,
+  // faster settlement, and higher entered annual return.
+  options.sort((a, b) =>
+    Number(b.enough) - Number(a.enough) ||
+    a.exitRate - b.exitRate ||
+    a.settlementDays - b.settlementDays ||
+    b.annualReturn - a.annualReturn
+  );
+
+  if (!options.length) {
+    result.textContent =
+      'No saved asset estimate can release money within your deadline. Check your asset values and settlement times, follow up on expected receipts, or review whether the deadline can be changed. Do not assume an investment can be withdrawn immediately.';
+    return;
+  }
+
+  let remaining = gap;
+  const recommendations = [];
+
+  for (const asset of options) {
+    if (remaining <= 0) break;
+
+    // Gross amount needed from this asset to provide the remaining
+    // amount after its estimated exit cost.
+    const rate = asset.exitRate;
+    const grossForRemaining = remaining / Math.max(0.000001, 1 - rate);
+    const gross = Math.min(asset.value, grossForRemaining);
+    const cost = gross * rate;
+    const net = gross - cost;
+
+    recommendations.push({
+      ...asset,
+      gross,
+      cost,
+      net
+    });
+
+    remaining = Math.max(0, remaining - net);
+  }
+
+  const lines = recommendations.map((asset, index) =>
+    `${index + 1}. ${asset.name}: estimated withdrawal ${money(asset.gross)}, ` +
+    `exit cost ${money(asset.cost)}, net proceeds ${money(asset.net)}, ` +
+    `settlement ${asset.settlementDays} day(s).`
+  );
+
+  const best = recommendations[0];
+  const warning = remaining > 0
+    ? `Estimated funding gap remaining: ${money(remaining)}. Your entered assets may not cover the full shortfall.`
+    : `The selected estimates cover the funding gap of ${money(gap)}.`;
+
+  result.textContent =
+    `Funding needed after projected funds and reserve: ${money(gap)}.\n\n` +
+    `Available by deadline: ${dateFmt(deadline)} (${daysLeft} day(s)).\n\n` +
+    `Suggested withdrawal order:\n${lines.join('\n')}\n\n` +
+    `${warning}\n\n` +
+    `This is an estimate based on saved balances, entered exit costs and settlement times. ` +
+    `Expected receipts may be late; FD penalties, mutual-fund exit loads, taxes, market losses, ` +
+    `lock-ins and actual redemption times may differ. Verify with your bank or fund provider.`;
+}
+
+function renderUpcoming(){if(upType==='in'){$('upcomingHead').innerHTML='<tr><th>Customer / name</th><th>Due money</th><th>Due date</th><th>Phone</th><th>Status</th></tr>';let list=invoices.filter(i=>i.status==='Pending').sort((a,b)=>a.dueDate.localeCompare(b.dueDate));$('upcomingRows').innerHTML=list.length?list.map(i=>`<tr><td>${esc(i.name)}</td><td>${money(i.amount)}</td><td>${dateFmt(i.dueDate)}</td><td>${esc(i.phone)}</td><td><span class="pill pending">Pending</span> <button class="btn secondary" onclick="markPaid('${i.id}')">Mark paid</button></td></tr>`).join(''):'<tr><td colspan="5" class="table-empty">No expected inflows. Pending invoices created through Payment appear here automatically.</td></tr>'}else{$('upcomingHead').innerHTML='<tr><th>Purpose</th><th>Amount</th><th>Deadline</th><th>Action</th></tr>';let list=outgoings.slice().sort((a,b)=>a.date.localeCompare(b.date));$('upcomingRows').innerHTML=list.length?list.map(i=>`<tr><td>${esc(i.purpose||i.name)}</td><td>${money(i.amount)}</td><td>${dateFmt(i.date)}</td><td><button class="btn secondary" onclick="markOutPaid('${i.id}')">Mark paid</button></td></tr>`).join(''):'<tr><td colspan="4" class="table-empty">No outgoing payments added. Use “Add outgoing due” to add rent, EMI, salary, or any custom purpose.</td></tr>'}}window.setUpcomingType = function(type) {
+  upType = type === 'out' ? 'out' : 'in';
+  $('upInTab').classList.toggle('primary', upType === 'in');
+  $('upInTab').classList.toggle('secondary', upType !== 'in');
+  $('upOutTab').classList.toggle('primary', upType === 'out');
+  $('upOutTab').classList.toggle('secondary', upType !== 'out');
+  renderUpcoming();
+};
+$('upInTab').addEventListener('click', function () { window.setUpcomingType('in'); });
+$('upOutTab').addEventListener('click', function () { window.setUpcomingType('out'); });
+window.markPaid=id=>{let i=invoices.find(x=>x.id===id);if(!i)return;i.status='Successful';i.paidDate=today();if(i.mode==='Cash'){transactions.push({id:'TX-'+Date.now(),type:'in',amount:i.amount,name:i.name,category:'Customer receipt',mode:'Physical cash',date:today(),notes:'Invoice '+i.id+' marked paid',status:'Successful'});cashOnHand+=i.amount}save();renderAll();renderUpcoming();toast('Invoice marked paid.')};window.markOutPaid=id=>{let i=outgoings.find(x=>x.id===id);if(!i)return;outgoings=outgoings.filter(x=>x.id!==id);transactions.push({id:'TX-'+Date.now(),type:'out',amount:i.amount,name:i.purpose,category:i.purpose,mode:'Manual payment',date:today(),notes:'Scheduled payment completed',status:'Successful'});save();renderAll();renderUpcoming();toast('Outgoing payment marked complete.')};function getDueSoon(){return [...invoices.filter(i=>i.status==='Pending').map(i=>({date:i.dueDate,name:i.name,amount:i.amount,type:'in'})),...outgoings.map(o=>({date:o.date,name:o.purpose,amount:o.amount,type:'out'}))].filter(x=>x.date&&x.date<=offsetDate(3))}$('notifyBtn').onclick=()=>{let ds=getDueSoon();toast(ds.length?`${ds.length} payment deadline(s) due within 3 days. Open Upcoming payments to review.`:'No deadlines due in the next 3 days.');if(ds.length)navigate('upcoming')};
+function renderOutlook(){let ins=total('in'),outs=total('out'),net=ins-outs;$('outlookText').className='notice '+(net<0?'warn':'');$('outlookText').innerHTML=`<b>${net<0?'Recorded cash flow is negative':net>0?'Recorded cash flow is positive':'No net recorded movement yet'}</b><br>Inflow this month: ${money(ins)}<br>Outflow this month: ${money(outs)}<br>Net recorded result: ${money(net)}<br><span class="sub">This is cash-flow difference, not accounting profit after inventory, tax, depreciation, or unpaid bills.</span>`;$('outlookList').innerHTML=[...outgoings.map(o=>({name:o.purpose,amount:o.amount,date:o.date,type:'out'})),...invoices.filter(i=>i.status==='Pending').map(i=>({name:i.name,amount:i.amount,date:i.dueDate,type:'in'}))].sort((a,b)=>a.date.localeCompare(b.date)).slice(0,5).map(x=>`<div class="list-item"><div><b>${esc(x.name)}</b><div class="sub">${dateFmt(x.date)}</div></div><b class="${x.type==='in'?'green':'red'}">${money(x.amount)}</b></div>`).join('')||'<div class="empty">Add due dates and transactions to build your outlook.</div>'}
+function adviceText(q='',cash=null,reserve=null){cash=Math.max(0,Number(cash===null?cashOnHand:cash)||0);reserve=Math.max(0,Number(reserve===null?0:reserve)||0);let balance=cash,usable=Math.max(0,cash-reserve);let events=[...outgoings.map(o=>({kind:'out',date:o.date,amount:Number(o.amount)||0,label:o.purpose||o.name||'Business payment',id:o.id})),...invoices.filter(i=>i.status==='Pending').map(i=>({kind:'in',date:i.dueDate,amount:Number(i.amount)||0,label:i.name||'Customer payment',id:i.id}))].filter(e=>e.date&&e.amount>0).sort((a,b)=>a.date.localeCompare(b.date)||(a.kind==='in'?1:-1));let result=$('adviceResult');if(!events.length){result.innerHTML=`<div class="panel"><h3>Let’s build your payment plan</h3><p class="sub">Current available balance: <b>${money(cash)}</b>${reserve?` · Emergency reserve: <b>${money(reserve)}</b>`:''}</p><div class="assist-empty-grid"><div><b>1. Add your bills</b><p>Go to Upcoming payments → switch to Outflow → Add outgoing due. Enter rent, EMI, supplier bills, amount, and due date.</p></div><div><b>2. Add customer money</b><p>Create a bill from Payment and mark it Pending, with the expected payment date.</p></div><div><b>3. Return here</b><p>Press “Build my payment plan” to see your balance calculated after each event.</p></div></div></div>`;return ''}let rows=[],running=cash;for(let e of events){let before=running;if(e.kind==='in')running+=e.amount;else running-=e.amount;let overdue=e.date<today();rows.push({...e,before,after:running,overdue})}let availableAfterReserve=cash-reserve;let ending=rows.length?rows[rows.length-1].after:cash;let warning=rows.some(r=>r.after<0)?`<div class="assist-alert danger"><b>⚠️ Possible cash shortage</b><span>Your planned balance drops below ₹0 at one or more steps. Follow up on customer payments, contact the biller before the deadline, or review funding options.</span></div>`:rows.some(r=>r.after<reserve)?`<div class="assist-alert warning"><b>⚠️ Reserve may be used</b><span>Your plan may leave less than your chosen reserve of ${money(reserve)}. Check essential operating costs before paying.</span></div>`:`<div class="assist-alert success"><b>✓ The listed plan fits your current balance and expected receipts</b><span>This is a projection, not a guarantee. A pending customer payment only increases your real balance after the money arrives.</span></div>`;let cards=rows.map((r,i)=>`<article class="assist-step ${r.kind==='in'?'incoming':'outgoing'}"><div class="assist-step-top"><span class="assist-step-number">${String(i+1).padStart(2,'0')}</span><span class="assist-kind ${r.kind}">${r.kind==='in'?'EXPECTED MONEY IN':'PAYMENT TO MAKE'}</span>${r.overdue?'<span class="assist-overdue">Overdue</span>':''}</div><h4>${esc(r.label)}</h4><div class="assist-date">${dateFmt(r.date)}${r.overdue?' · deadline has passed':''}</div><div class="assist-amount ${r.kind==='in'?'green':'red'}">${r.kind==='in'?'+':'−'}${money(r.amount)}</div><div class="assist-balance-grid"><div><span>Balance before</span><b>${money(r.before)}</b></div><div><span>${r.kind==='in'?'After receipt':'After payment'}</span><b class="${r.after<0?'red':r.after<reserve?'amber':'green'}">${money(r.after)}</b></div></div><p class="assist-step-note">${r.kind==='in'?'Projected only — count this money after the customer actually pays.':'Planned deduction on the listed due date.'}${r.after<0?' This step creates a projected shortfall of '+money(Math.abs(r.after))+'.':''}</p></article>`).join('');let expectedIn=events.filter(e=>e.kind==='in').reduce((a,e)=>a+e.amount,0),plannedOut=events.filter(e=>e.kind==='out').reduce((a,e)=>a+e.amount,0);let suggestions=[];let firstShort=rows.find(r=>r.after<0);if(firstShort){let earlierIn=rows.filter(r=>r.kind==='in'&&r.date<=firstShort.date).reduce((a,e)=>a+e.amount,0);suggestions.push(`<li>Before <b>${esc(firstShort.label)}</b> is due, check whether enough confirmed money will be available. The current plan reaches ${money(firstShort.after)}.</li>`);let laterIn=events.find(e=>e.kind==='in'&&e.date>firstShort.date);if(laterIn)suggestions.push(`<li>Expected customer payment (${money(laterIn.amount)} on ${dateFmt(laterIn.date)}) arrives after this deadline, so contact the customer about an earlier payment or speak to the biller about rescheduling.</li>`)}else{let firstOut=rows.find(r=>r.kind==='out');if(firstOut&&firstOut.after>=reserve)suggestions.push(`<li>You can plan for <b>${esc(firstOut.label)}</b> (${money(firstOut.amount)}) on ${dateFmt(firstOut.date)}; projected balance afterwards is ${money(firstOut.after)}.</li>`);let lateIncoming=rows.find(r=>r.kind==='in');if(lateIncoming)suggestions.push(`<li>Keep the customer receipt as <b>expected</b> until it is received. After it arrives, your projected balance becomes ${money(lateIncoming.after)}.</li>`);if(ending>=reserve)suggestions.push(`<li>After all listed events, projected balance is <b>${money(ending)}</b>${reserve?`, which is ${money(ending-reserve)} above your reserve`:''}.</li>`)}if(/rent|emi|salary|supplier/i.test(q))suggestions.push('<li>Check any late fees, essential business needs, and contractual deadlines before changing the order of payments.</li>');if(!suggestions.length)suggestions.push('<li>Review the listed dates and amounts, and add any missing business expenses before relying on this plan.</li>');result.innerHTML=`<div class="assist-summary-grid"><div class="assist-summary-card"><span>Starting balance</span><b>${money(cash)}</b></div><div class="assist-summary-card"><span>Expected customer money</span><b class="green">+${money(expectedIn)}</b></div><div class="assist-summary-card"><span>Planned payments</span><b class="red">−${money(plannedOut)}</b></div><div class="assist-summary-card"><span>Projected ending balance</span><b class="${ending<0?'red':ending<reserve?'amber':'green'}">${money(ending)}</b></div></div>${warning}<div class="panel assist-timeline-panel"><div class="panel-head"><div><h3>Your payment plan, step by step</h3><div class="sub">Sorted by due date. Each column shows the amount and the balance after it.</div></div></div><div class="assist-timeline">${cards}</div></div><div class="panel assist-suggestions"><h3>What Flowly suggests</h3><ul>${suggestions.join('')}</ul><p class="sub">Projection assumes listed events happen on their entered dates. Expected customer payments are not guaranteed; check your actual balance before making a payment.</p></div>`;return ''}$('getAdvice').onclick=()=>{adviceText($('assistQuestion').value,$('assistCash').value,$('assistReserve').value);renderOutlook()};
+function renderAssets(){$('assetInputs').innerHTML=assets.map((a,i)=>`<div class="list-item" style="display:block"><div style="display:flex;justify-content:space-between;gap:8px"><b>${esc(a.name)}</b><span class="pill">${esc(a.kind)}</span></div><div class="form-grid" style="margin-top:9px"><div class="field"><label>Estimated value (₹)</label><input data-asset="${i}" data-key="value" type="number" min="0" value="${a.value}"></div><div class="field"><label>Annual return (%)</label><input data-asset="${i}" data-key="annual" type="number" min="0" step=".1" value="${a.annual}"></div><div class="field"><label>Exit cost / penalty (%)</label><input data-asset="${i}" data-key="exit" type="number" min="0" step=".1" value="${a.exit}"></div><div class="field"><label>Cash available in (days)</label><input data-asset="${i}" data-key="days" type="number" min="0" value="${a.days}"></div></div></div>`).join('')}$('saveAssets').onclick=()=>{document.querySelectorAll('[data-asset][data-key]').forEach(inp=>assets[Number(inp.dataset.asset)][inp.dataset.key]=Math.max(0,Number(inp.value)||0));save();toast('Asset estimates saved.');compareInvestments()};function compareInvestments(){document.querySelectorAll('[data-asset][data-key]').forEach(inp=>assets[Number(inp.dataset.asset)][inp.dataset.key]=Math.max(0,Number(inp.value)||0));save();let need=Math.max(0,Number($('invNeed').value)||0),deadline=$('invDeadline').value||today(),days=Math.max(0,Math.ceil((new Date(deadline+'T12:00:00')-new Date(today()+'T12:00:00'))/86400000)),reserve=Math.max(0,Number($('invReserve').value)||0),incomingDate=$('invIncomingDate').value,incoming=Math.max(0,Number($('invIncomingAmount').value)||0);if(incomingDate&&incomingDate<=deadline&&incoming>0){need=Math.max(0,need-incoming)}let options=assets.map(a=>{let eligible=a.days<=days,cap=Math.min(a.value,need),penalty=cap*a.exit/100,opportunity=cap*a.annual/100*Math.max(0,30-a.days)/365,net=cap-penalty;return {...a,eligible,cap,penalty,opportunity,net,cost:penalty+opportunity}}).filter(a=>a.eligible&&a.value>0).sort((a,b)=>a.cost-b.cost);let out;if(!need)out='Expected incoming money covers the requested amount by your deadline based on the dates entered. Confirm it arrives before relying on it.';else if(!options.length)out='No entered asset is available by the deadline. Review the settlement-time estimates, contact the customer about timing, negotiate the due date, or discuss short-term funding with a qualified adviser.';else{let remain=need,picks=[];for(let a of options){if(remain<=0)break;let use=Math.min(remain,a.value);picks.push({...a,use,estimatedNet:use-use*a.exit/100});remain-=use}out=`Amount to source: ${money(need)} by ${dateFmt(deadline)}.\n\n`+picks.map((p,i)=>`${i+1}. ${p.name}: use up to ${money(p.use)}. Estimated exit cost ${money(p.use*p.exit/100)}; estimated amount after exit cost ${money(p.estimatedNet)}. Estimated settlement: ${p.days} day(s).`).join('\n\n')+`\n\nEstimated remaining gap: ${money(Math.max(0,remain))}.`+`\n\nComparison is based on entered exit cost, annual return, and settlement days. It does not guarantee the best real-world outcome; taxes, penalties, market moves, lock-ins, and business reserve needs must be verified.`}$('investmentResult').textContent=out} $('compareInvestments').onclick=compareInvestments;$('invNeed').oninput=()=>{};
+const searchItems=[['Home','home','Business overview and five financial summary cards'],['Cash flow','cashflow','Inflow, outflow, actual and forecast graphs'],['Invoice','invoice','Bills, transaction history, receipt downloads'],['Upcoming payments','upcoming','Expected inflow and planned outgoing deadlines'],['Assistance','assistance','Prioritize salary, rent, EMI and cash gaps'],['Add transactions','transactions','Manual cash and other money entries'],['Investment','investment','Compare FD, mutual funds and bank asset withdrawals'],['Profile','search','Profile details and account settings']];function renderSearch(){let q=($('globalSearch').value||'').toLowerCase();let arr=searchItems.filter(x=>!q||(x.join(' ').toLowerCase().includes(q)));$('searchResults').innerHTML=arr.map(x=>`<button class="quick" data-result="${x[1]}">↗<b>${x[0]}</b><span>${x[2]}</span></button>`).join('')||'<div class="empty">No matching section. Try another search term.</div>';document.querySelectorAll('[data-result]').forEach(b=>b.onclick=()=>navigate(b.dataset.result))}$('globalSearch').oninput=renderSearch;
+$('chatFab').onclick=()=>{$('chatbox').classList.toggle('hidden')};$('chatClose').onclick=()=>$('chatbox').classList.add('hidden');function chatReply(q){let s=q.toLowerCase();if(s.includes('invest')||s.includes('fd')||s.includes('mutual'))return 'Open Investment to compare your entered bank/FD/mutual-fund estimates. Enter the amount needed and deadline. The demo ranks options by estimated exit costs and settlement timing; verify actual terms before withdrawing.';if(s.includes('invoice')||s.includes('bill'))return 'Click the Payment button at the top or open Invoice → Generate bill. Add customer name, phone, amount, payment mode and status. For Pending, enter how many days until expected payment; it appears in Upcoming payments.';if(s.includes('cash')||s.includes('received')||s.includes('paid')||s.includes('transaction'))return 'Open Add transactions and enter amount, name, type, mode and date. Physical cash entries update the recorded cash-in-hand figure. Count your real cash and use reconciliation to compare.';if(s.includes('sign out')||s.includes('delete'))return 'Use Sign out & clear data in the left menu. Confirming it deletes the Flowly demo profile, transactions, invoices, due dates, asset estimates and cash balance from this browser.';if(s.includes('salary')||s.includes('rent')||s.includes('emi')||s.includes('money')||s.includes('shortage')||s.includes('pay'))return adviceText(q,cashOnHand,5000);if(s.includes('profit')||s.includes('loss')){let net=total('in')-total('out');return `Recorded inflow this month: ${money(total('in'))}. Recorded outflow: ${money(total('out'))}. Net cash movement: ${money(net)}. This is not a full accounting profit/loss statement.`}return 'I can help explain the Flowly sections, create invoices, record manual cash, review upcoming due dates, prioritize payments, or compare entered investment estimates. Ask a specific question, or use the dashboard options.'}$('chatForm').onsubmit=e=>{e.preventDefault();let q=$('chatInput').value.trim();if(!q)return;let u=document.createElement('div');u.className='bubble user';u.textContent=q;$('chatMessages').appendChild(u);let r=document.createElement('div');r.className='bubble';r.textContent=chatReply(q);$('chatMessages').appendChild(r);$('chatInput').value='';$('chatMessages').scrollTop=$('chatMessages').scrollHeight};
+// Notification reminders are evaluated when the page opens; no background push service in this offline demo.
+$('notifyBtn').title='Review deadlines due within 3 days';$('paymentTop').title='Generate a customer bill';load();if(profile){openApp()}else{switchAuth('signup')}
+
+
+// Language menu: Google Translate handles page translation. Keep the selector readable
+// and apply the selected locale only after Google's widget is available.
+let flowlyLanguageApplyTimer = null;
+function googleTranslateElementInit(){
+  try {
+    new google.translate.TranslateElement({
+      pageLanguage:'en',
+      autoDisplay:false,
+      includedLanguages:'af,sq,am,ar,hy,as,ay,az,bm,eu,be,bn,bho,bs,bg,ca,ceb,zh-CN,zh-TW,co,hr,cs,da,dv,doi,nl,en,eo,et,ee,tl,fi,fr,fy,gl,ka,de,el,gn,gu,ht,ha,haw,iw,hi,hmn,hu,is,ig,ilo,id,ga,it,ja,jv,kn,kk,km,rw,gom,ko,kri,ku,ky,lo,la,lv,ln,lt,lg,lb,mk,mai,mg,ms,ml,mt,mi,mr,mni-Mtei,lus,mn,my,ne,no,ny,or,om,ps,fa,pl,pt,pa,qu,ro,ru,sm,sa,gd,nso,sr,st,sn,sd,si,sk,sl,so,es,su,sw,sv,tg,ta,tt,te,th,ti,ts,tr,tk,ak,uk,ur,ug,uz,vi,cy,xh,yi,yo,zu'
+    },'google_translate_element');
+    const selector=document.getElementById('languageSelect');
+    const saved=localStorage.getItem('flowly_language')||'en';
+    if(selector) selector.value=saved;
+    setTimeout(()=>applyFlowlyLanguage(saved),1000);
+  } catch(e) { console.warn('Translation widget unavailable',e); }
+}
+function applyFlowlyLanguage(code){
+  const selector=document.getElementById('languageSelect');
+  if(selector && selector.value!==code) selector.value=code;
+  localStorage.setItem('flowly_language',code);
+  if(flowlyLanguageApplyTimer) clearTimeout(flowlyLanguageApplyTimer);
+  const attempt=(tries=0)=>{
+    const combo=document.querySelector('.goog-te-combo');
+    if(combo){
+      if(combo.value!==code){combo.value=code;combo.dispatchEvent(new Event('change',{bubbles:true}));}
+      // Google Translate may update asynchronously; don't repeatedly re-apply after success.
+      return;
+    }
+    if(tries<12) flowlyLanguageApplyTimer=setTimeout(()=>attempt(tries+1),400);
+  };
+  if(code==='en'){
+    // Ask Google Translate to restore the source language too, rather than leaving old text behind.
+    const combo=document.querySelector('.goog-te-combo');
+    if(combo){combo.value='en';combo.dispatchEvent(new Event('change',{bubbles:true}));}
+    document.cookie='googtrans=/en/en;path=/';
+    try{localStorage.setItem('flowly_language','en')}catch(e){}
+    return;
+  }
+  document.cookie='googtrans=/en/'+code+';path=/';
+  attempt();
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const selector=document.getElementById('languageSelect');
+  if(selector){
+    selector.value=localStorage.getItem('flowly_language')||'en';
+    selector.addEventListener('change',()=>applyFlowlyLanguage(selector.value));
+  }
+});
+
+// Voice-to-text for Search, Assistance, and Ask Flowly. Uses the browser Web Speech API.
+(function setupFlowlyVoice(){
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let activeRecognition = null;
+  let activeButton = null;
+  function setStatus(target, message){ const el=document.getElementById('voiceStatus-'+target); if(el) el.textContent=message; }
+  function stopActive(){
+    if(activeRecognition){ try{activeRecognition.stop()}catch(e){} }
+    if(activeButton){ activeButton.classList.remove('listening'); activeButton.setAttribute('aria-pressed','false'); }
+    activeRecognition=null; activeButton=null;
+  }
+  document.querySelectorAll('[data-voice-target]').forEach(button=>{
+    button.setAttribute('aria-pressed','false');
+    button.addEventListener('click',()=>{
+      const target=button.getAttribute('data-voice-target');
+      const input=document.getElementById(target);
+      if(!input) return;
+      if(!SpeechRecognition){
+        setStatus(target,'Voice input is not supported in this browser. Try the latest Chrome or Edge.');
+        return;
+      }
+      if(activeButton===button){ stopActive(); setStatus(target,'Voice input stopped.'); return; }
+      stopActive();
+      const recognition=new SpeechRecognition();
+      const selectedLanguage=localStorage.getItem('flowly_language')||'en';
+      const speechLocales={en:'en-IN',kn:'kn-IN',hi:'hi-IN',ta:'ta-IN',te:'te-IN',ml:'ml-IN',bn:'bn-IN',gu:'gu-IN',mr:'mr-IN',ur:'ur-IN',pa:'pa-IN',or:'or-IN'};
+      recognition.lang=speechLocales[selectedLanguage]||selectedLanguage;
+      recognition.continuous=false; recognition.interimResults=true; recognition.maxAlternatives=1;
+      const original=input.value.trim();
+      let finalText='';
+      activeRecognition=recognition; activeButton=button;
+      button.classList.add('listening'); button.setAttribute('aria-pressed','true');
+      setStatus(target,'Listening… speak clearly. Your browser may ask for microphone permission.');
+      recognition.onresult=(event)=>{
+        let interim='';
+        for(let i=event.resultIndex;i<event.results.length;i++){
+          const phrase=event.results[i][0].transcript;
+          if(event.results[i].isFinal) finalText+=phrase+' '; else interim+=phrase;
+        }
+        input.value=[original,finalText.trim(),interim.trim()].filter(Boolean).join(original?' ':' ');
+        input.dispatchEvent(new Event('input',{bubbles:true}));
+      };
+      recognition.onerror=(event)=>{
+        const messages={ 'not-allowed':'Microphone permission was blocked. Allow microphone access in your browser settings.', 'no-speech':'No speech detected. Tap the microphone and try again.', 'network':'Speech recognition needs a working internet connection in this browser.' };
+        setStatus(target,messages[event.error]||('Voice input error: '+event.error));
+      };
+      recognition.onend=()=>{
+        button.classList.remove('listening'); button.setAttribute('aria-pressed','false');
+        if(activeRecognition===recognition){activeRecognition=null;activeButton=null;}
+        if(finalText.trim()){
+          setStatus(target,'Voice captured. You can edit the text before submitting.');
+          if(target==='globalSearch' && typeof renderSearch==='function') renderSearch();
+          if(target==='chatInput') input.focus();
+        } else if(!document.getElementById('voiceStatus-'+target)?.textContent.includes('permission') && !document.getElementById('voiceStatus-'+target)?.textContent.includes('No speech')){
+          setStatus(target,'You can tap the microphone and try again.');
+        }
+      };
+      try{recognition.start();}catch(e){stopActive();setStatus(target,'Could not start microphone. Please try again.');}
+    });
+  });
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+
+</script>
+</body>
+</html>
